@@ -1,0 +1,15 @@
+.spanStyle {
+	position: absolute;
+	text-align: right;
+	top: 2px;
+	right: 0px;
+}
+
+.interest {
+	font-size: 2em;
+	color: #F0F8FF;
+}
+
+.addedStyle {
+	position: relative;
+}

@@ -15,9 +15,33 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
+	public function redirResume()
 	{
-		return View::make('hello');
+		return View::make('resume');
 	}
 
+	public function redirPortfolio()
+	{
+		return View::make('portfolio');
+	}
+
+	public function about()
+	{
+		return View::make('about');
+	}
+
+	// public function work()
+	// {
+	// 	return View::make('work');
+	// }
+
+	// public function education()
+	// {
+	// 	return View::make('edu');
+	// }
+
+	// public function contact()
+	// {
+	// 	return View::make('contact');
+	// }
 }

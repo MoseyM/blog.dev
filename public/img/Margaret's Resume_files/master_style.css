@@ -1,0 +1,35 @@
+body {
+	padding: 20px;
+	background: url('/img/resume_img.jpg') no-repeat fixed center center;
+	background-size: cover;
+}
+.container {
+	width: 800px;
+	padding: 0px;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+}
+.content {
+	color: white;
+	width: 600px;
+	float: right;
+	margin-left: -200px;
+}
+.content>ul {
+	font-style: 1.5em;
+}
+
+#sidebar {
+	width: 200px;
+	position: fixed;
+}
+
+.form-horizontal>* {
+	color: black;
+	position: relative;
+	width: 100%;
+	margin-bottom: 20px;
+}

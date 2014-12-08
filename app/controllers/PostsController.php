@@ -1,18 +1,21 @@
 <?php
 
-class PostsController extends \BaseController {
-
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
+class PostsController extends \BaseController 
+{
+	public function __construct()
 	{
-		$posts = Post::all();
-		return View::make('posts.index')->with('posts', $posts);
+    // call base controller constructor
+    parent::__construct();
+
+    // run auth filter before all methods on this controller except index and show
+    $this->beforeFilter('auth', array('except' => array('index', 'show')));
 	}
 
+	public function index()
+	{
+		$posts = Post::paginate(5);
+		return View::make('posts.index')->with('posts', $posts);
+	}
 
 	/**
 	 * Show the form for creating a new resource.
@@ -24,84 +27,60 @@ class PostsController extends \BaseController {
 		return View::make('posts.create');
 	}
 
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-    // create the validator
-    $validator = Validator::make(Input::all(), Post::$rules);
-    // attempt validation
-    if ($validator->fails()) {
-        // validation failed, redirect to the post create page with validation errors and old inputs
-        return Redirect::back()->withInput()->withErrors($validator);
-    } else {
-    	$post1 = new Post();
-		$post1->title = Input::get('title');
-		$post1->body  = Input::get('body');
-		$post1->save();
-		return Redirect::action('PostsController@index');
-    }
-}
-
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		$post = Post::find($id); 
-		return View::make('posts.show')->with('post', $post);
-	}
-
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		$post = Post::find($id);
-
-		return View::make('posts.edit')->with('post', $post);
-	}
-
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function update($id)
 	{
 		$post = Post::find($id);
-		$post->title = Input::get('title');
-		$post->body = Input::get('body');
-
-		$post->save();
-		return Redirect('posts.index');
+		return $this->checkThis($post);
 	}
 
+	public function store()
+	{
+    // create the validator
+    	$post1 = new Post();
+    	Log::info();
+		return $this->checkThis($post1);
+    }
 
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+	public function show($id)
+	{
+		try {
+			$post = Post::findorfail($id); 
+		} catch (Exception $e) {
+			App::abort(404);
+		}
+		return View::make('posts.show')->with('post', $post);
+	}
+
+	public function edit($id)
+	{
+		try {
+			$post = Post::findorfail($id);
+		} catch (Exception $e) {
+			App::abort(404);
+		}
+		return View::make('posts.edit')->with('post', $post);
+	}
+
 	public function destroy($id)
 	{
-		//
+		$post = Post::findorfail($id);
+
+		$post->delete();
+		return Redirect::action('/');
 	}
 
+	protected function checkThis(Post $post) {
+		// passing clean slate of post to add properties to later. We are checking the user input against our rules first.
+		$validator = Validator::make(Input::all(), Post::$rules);
+    	if ($validator->fails()) {
+    		Session::flash('errorMessage','Post was not saved successfully!');
+	        return Redirect::back()->withInput()->withErrors($validator);
+	    }
 
+	    $post->title = Input::get('title');
+		$post->body  = Input::get('body');
+		$post->save();
+		Session::flash('successMessage','Post successfully saved!');
+		return Redirect::action('PostsController@index');
+	}	
 }

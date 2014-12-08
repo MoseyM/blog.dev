@@ -6,10 +6,19 @@
 }
 
 .interest {
-	font-size: 2em;
-	color: #F0F8FF;
+	font-size: 1.25em;
+	color: red;
 }
 
 .addedStyle {
 	position: relative;
+}
+
+.timeStyle {
+	color: #99CCCC;
+	position: absolute;
+	font-size: 0.90;
+	text-align: right;
+	right: 0px;
+	bottom: 2px;
 }

@@ -3,7 +3,7 @@
 @section('content')
 <h1>Edit Blog Post</h1>
 
-	{{ Form::model($post, array('action' => ['PostsController@store', $post->id], 'method'=>'PUT')) }}
+	{{ Form::model($post, array('action' => ['PostsController@update', $post->id], 'method'=>'PUT')) }}
 	<div class="form-horizontal">
 		<input type="text" name="title" placeholder="title" value={{{ $post->title}}}>
 

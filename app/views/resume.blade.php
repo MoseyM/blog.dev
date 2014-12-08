@@ -6,8 +6,11 @@
 @section('content')
 <h1 id="adjustHead"> Resume </h1>
 <div class="container-fluid">
-<h2>Current Experience/Work</h2>
 <!-- This is where a div with my work would go -->
+<div class="navbar">
+	<span class="icon-bar"><a href="https://github.com?MoseyM"><img src="img/github.png" title="My Github"></a></span>
+    <span class="icon-bar"><a href="https://www.linkedin.com/profile/view?id=378036722&authType=name&authToken=t36F&locale=en_US&pvs=pp&trk=ppro_viewmore"><img src="img/linkedin.png" title="My LinkedIn Profile"></a></span> </div>
+</div>
 <div id="experience">
 	<h2>Education</h2>
 	<p>CodeUp - LAMP Fullstack Web Development</p>

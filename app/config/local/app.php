@@ -14,5 +14,5 @@ return array(
 	*/
 
 	'debug' => true,
-
+	'provider' => append_config(['Barryvdh\Debugbar\ServiceProvider'])
 );

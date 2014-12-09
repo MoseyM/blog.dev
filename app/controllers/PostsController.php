@@ -8,7 +8,7 @@ class PostsController extends \BaseController
     parent::__construct();
 
     // run auth filter before all methods on this controller except index and show
-    $this->beforeFilter('auth', array('except' => array('index', 'show')));
+    $this->beforeFilter('auth', array('except' => array('partials.index', 'partials.show')));
 	}
 
 	public function index()
@@ -37,7 +37,7 @@ class PostsController extends \BaseController
 	{
     // create the validator
     	$post1 = new Post();
-    	Log::info();
+    	Log::info('userInput',Input::all());
 		return $this->checkThis($post1);
     }
 
@@ -79,6 +79,7 @@ class PostsController extends \BaseController
 
 	    $post->title = Input::get('title');
 		$post->body  = Input::get('body');
+		$post->user_id = Auth::id();
 		$post->save();
 		Session::flash('successMessage','Post successfully saved!');
 		return Redirect::action('PostsController@index');

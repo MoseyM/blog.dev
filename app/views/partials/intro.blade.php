@@ -30,8 +30,12 @@
 			{{ (!empty($errors)) ? $errors->first('body', '<span class="help-block">:message</span>') : ''}}
 		</p>
 	    <!-- Beginning of partial for intro -->
-	   
-	    @yield('content')
+	    <section id="intro" class="sectIntro">
+	    @include('partials.intro')
+	    </section>
+	    <section>
+			@section('content')
+	    </section>
 
 	    	
     </div>

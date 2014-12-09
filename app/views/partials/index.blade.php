@@ -1,6 +1,3 @@
-@extends('layouts.master')
-
-@section('content')
 <h1>We're Here</h1>
 
 @foreach ($posts as $post)

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-custom" role="navigation">
+  <nav class="navbar navbar-default navbar-custom" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -8,34 +8,37 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="/">LOGO</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="aboutMe">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="{{{ action('PostsController@index') }}}">Recent Posts<span class="sr-only">(current)</span></a></li>
-        <li><a href="{{{ action('PostsController@create') }}}">New Post</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">More <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="{{{ action('HomeController@redirPortfolio') }}}">Portfolio</a></li>
-            <li><a href="{{{ action('HomeController@redirResume') }}}">Resume</a></li>
-            <li><a href="{{{ action('HomeController@about') }}}">About Me</a></li>
-          </ul>
+      <ul class="nav navbar-nav" id="selectDir">
+        <li><a href="{{{ action('PostsController@index') }}}">Recent Posts</a></li>
+        @if (Auth::check())
+        <li>
+        <a href="{{{ action('PostsController@create') }}}">New Post</a>
+        </li>
+        @endif
+      </ul>
+      @if (Auth::check())
+      <h5 id='welcomeSign'> Welcome, {{ Auth::user()->email }}! </h5>
+      @endif
+
+      <ul class="nav navbar-nav navbar-right">
+        @if (Auth::check())
+        <li><a href="{{{ action('HomeController@dologout') }}}">Logout</a></li>
+        @else 
+        <li><a href="{{{ action('HomeController@showlogin') }}}">Login</a></li>
+        @endif
+        <!-- search bar -->
+        <li>
+          {{ Form::open(['action'=>'PostsController@index', 'method'=>'GET', 'class'=>'form-inline']) }} 
+          {{ Form::text('searchKey', null, ['class' => 'form-control', 'placeholder' => 'Search By Title Here']) }}
+          {{ Form::submit('search') }}
+          {{ Form::close() }}
         </li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->

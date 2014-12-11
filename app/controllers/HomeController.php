@@ -6,23 +6,31 @@ class HomeController extends BaseController {
 		return View::make('login');
 	}
 
+	public function chkAuth() {
+		if (Auth::check()) {
+			return Redirect::action('PostsController@index');
+		} else {
+			return View::make('login');
+		}
+	}
 	public function dologin()
 	{
 		$email = Input::get('email');
 		$password = Input::get('password');
-		if (Auth::attempt(array('email' => $email, 'password' => $password))) {
+		if (Auth::attempt(array('email' => $email, 'password' => $password), false, true)) {
+			// return 'test';
 		    return Redirect::intended('posts');
 		} else {
 			Session::flash('errorMessage', 'Failed to Authenticate.');
 			return Redirect::back();
-    // login failed, go back to the login screen
 		}
 	}
 
 	public function dologout()
 	{
 		Auth::logout();
-		return Redirect::action('PostsController@index');
+		Session::flash('successMessage', 'You have successfully signed out');
+		return Redirect::action('PostsController@index');	
 	}
 
 	public function redirResume()

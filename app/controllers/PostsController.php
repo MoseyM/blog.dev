@@ -8,15 +8,28 @@ class PostsController extends \BaseController
     parent::__construct();
 
     // run auth filter before all methods on this controller except index and show
-    $this->beforeFilter('auth', array('except' => array('partials.index', 'partials.show')));
+    $this->beforeFilter('auth', array('except' => array('index', 'show')));
 	}
 
 	public function index()
 	{
-		$posts = Post::paginate(5);
-		return View::make('posts.index')->with('posts', $posts);
-	}
+		// setting a var to the search object and adding eager loading for quicker searching if not null.
+		$query = Post::with('user');
+		$search = Input::get('searchKey');
+		// if statement will add on the where method that will change query to only hold info related to searchTerm
+		if (Input::has('searchKey')) {
+			$query->where('title', 'LIKE' , "%{$search}%");
+		}
+		//Universal no matter if search or not actions that will apply to our query
+		$posts = $query->orderBy('created_at', 'desc')->paginate(4);
 
+		if (Input::get('searchKey') && count($posts) <= 0) {
+			Session::flash('errorMessage', 'There are no results matching your search.');
+			return Redirect::back();
+		}
+		// MUST include info you want to use in the view by passing it with the with()
+		return View::make('posts.index')->with('posts', $posts)->with('search',$search);
+	}
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -64,7 +77,6 @@ class PostsController extends \BaseController
 	public function destroy($id)
 	{
 		$post = Post::findorfail($id);
-
 		$post->delete();
 		return Redirect::action('/');
 	}

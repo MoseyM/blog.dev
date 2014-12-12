@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <title>Margaret's Resume</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 
 	<!-- Optional theme -->
-	<link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="/css/animate.css">
 	<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="/css/master_style.css">
@@ -48,13 +48,15 @@
   		$('#loginForm').addClass('animated bounceIn');
 
   		$('.yes').addClass('animated zoomInRight');
-  		$('#sendData').click(function() {
-			$body = $('textarea').data('body').html();
-			$(this).getJson("http://sentiment.vivekn.com/api/" + $body, function( text ) {
-				$('p#spitoutTest').html('hello');
-			});
-});
-
+  		$('#sendData').submit(function(e){
+			var body = $('textarea').data('body-analy').val();
+			e.preventDefault();
+  			$.postJSON('http://sentiment.vivekn.com/api/batch/', {"body": body} , function(data) {
+  				$('#sentiment').val(data.sentiment);
+			  	$('#confidence').val(data.confidence);
+			  	$('#sendData').submit(); 
+  			});
+		});
 	@yield('jquery')
 });
 	</script>

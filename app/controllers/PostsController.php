@@ -91,6 +91,10 @@ class PostsController extends \BaseController
 
 	    $post->title = Input::get('title');
 		$post->body  = Input::get('body');
+		if(!empty(Input::get('sentiment') && Input::get('confidence'))) {
+			$post->confidence = Input::get('confidence');
+			$post->sentiment = Input::get('sentiment');
+		}
 		$post->user_id = Auth::id();
 		$post->save();
 		Session::flash('successMessage','Post successfully saved!');

@@ -6,6 +6,11 @@ class HomeController extends BaseController {
 		return View::make('login');
 	}
 
+	public function whacka() 
+	{
+		return View::make('whacka.index');
+	}
+
 	public function chkAuth() {
 		if (Auth::check()) {
 			return Redirect::action('PostsController@index');

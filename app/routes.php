@@ -20,4 +20,7 @@ Route::get('about' , 'HomeController@about');
 
 Route::get('search' , 'PostsController@index');
 
+Route::get('whacka','HomeController@whacka');
+
+
 

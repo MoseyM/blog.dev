@@ -3,9 +3,12 @@ Route::get('login',  'HomeController@showlogin');
 Route::post('login', 'HomeController@dologin');
 Route::get('logout', 'HomeController@dologout');
 
+//For Http Requests
 Route::resource('posts', 'PostsController');
 
-Route::get('/', 'HomeController@chkAuth');
+Route::get('/', function() {
+	return View::make('index');
+});
 
 Route::get('resume','HomeController@redirResume');
 

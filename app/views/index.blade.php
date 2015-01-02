@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Freelancer - Start Bootstrap Theme</title>
+    <title>moseJem - Exquisite</title>
 
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -44,7 +44,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-      <a class="navbar-brand" href="#page-top"><img src="/img/navUp.png"> </a>          
+             <a href="#page-top">Home</a>
+
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -62,6 +63,9 @@
                     <li class="page-scroll">
                         <a href="#contact">Contact</a>
                     </li>
+                    <li class="page-scroll">
+                        <a href="#resume"></a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -74,9 +78,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive" src="img/profile.png" alt="">
+                    <img class="img-responsive" src="" alt="">
                     <div class="intro-text">
-                        <span class="name">Start Bootstrap</span>
+                        <span class="name">Margaret Moseyee</span>
                         <hr class="star-light">
                         <span class="skills">Web Developer - Back End Support - User Experience Designer</span>
                     </div>
@@ -96,7 +100,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
-                    <a href="{{ action('HomeController@whacka') }}" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
@@ -170,15 +174,15 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-lg-offset-2">
-                    <p> My name is Margaret. I was born and raised in a Liberian household in Fort Worth, TX. I then moved to Austin to obtain a Bachelors in Business Administration from the University of Texas. I realized that my heart was not in the area of study I had devoted a bulk of my college career in so I decided to look elsewhere. I then began to revisit my intest in web developement and am currently attending Codeup to obtain the skills I need to make this a career. </p>
+                    <p> My name is Margaret. I was born and raised in a Liberian household in Fort Worth, TX. I then moved to Austin to obtain a Bachelors in Business Administration from the University of Texas. I realized that my heart was not in the area of study I had devoted a bulk of my college career in so I decided to look elsewhere. I then began to revisit my intrest in web developement and took the first step to a career in this field by completing a 3 month bootcamp at Codeup. </p>
 <quote> “Unhappiness lies in that gap between our talents and our expectations.” 
 ― Sebastian Horsley </quote>
                 </div>
                 <div class="col-lg-4">
-<p> Even though I have only been on this earth for 25 years or so, I have decided to seek happiness as my ultimate goal. Life is already hard and, in my honest opinion, there is no need to make it worse chasing things that will not make me happy. I am very excited for my life as of now and want to see what this adventure will bring. </p>
+<p> Even though I have only been on this earth for 25 years or so, I have decided to seek happiness as my ultimate goal. Life is already hard and, in my honest opinion, there is no need to make it worse chasing things that will not make you happy. I am very excited for my life as of now and want to see what this adventure will bring. </p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                   <a href="https://www.linkedin.com/profile/view?id=378036722&authType=name&authToken=t36F&locale=en_US&pvs=pp&trk=ppro_viewmore"><img src="img/linkedin.png" title="My LinkedIn Profile"></a></span> 
+                   <a href="https://www.linkedin.com/profile/view?id=378036722&authType=name&authToken=t36F&locale=en_US&pvs=pp&trk=ppro_viewmore"><img src="/img/linkedin.png" title="My LinkedIn Profile"></a></span> 
                 </div>
             </div>
         </div>
@@ -246,7 +250,7 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Location</h3>
-                        <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+                        <p>San Antonio, Texas</p>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Around the Web</h3>
@@ -268,10 +272,6 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="footer-col col-md-4">
-                        <h3>About Freelancer</h3>
-                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -279,7 +279,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        Copyright &copy; Your Website 2014
+                        Copyright &copy; www.mosejem.com 2014
                     </div>
                 </div>
             </div>
@@ -294,9 +294,42 @@
     </div>
 
     <!-- Portfolio Modals -->
-
-
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>WhackaMole Game - Remixed</h2>
+                            <hr class="star-primary">
+                            <p>I created a small game using Javascript and PHP. The object of the game is to score enough on each level. The individual boxes dissapear on a random cycle every few seconds. The second level, to increase difficulty, has a shorter interval.</p>
+                            <p>Key Points: 
+                            <ul class="list">
+                                <li>Window attributes were changed using jQuery. I basically updated the image attributes after checking the conditional that the right score was achieved.
+                                </li>
+                                <li>Points were calculated through adding a listener to each div that was active during that interval.
+                                </li>
+                                <li>Basic CSS was used to make the images a bit transperant. I thought it would add a bit more color and animation to the game itself.
+                                </li>
+                                 <li>An additional feature was added when a high score was met, a form would appear to save the score with the player's name.
+                                </li>
+                            </ul>
+                            </p>
+                            <p>Overall, I had a great time creating the game and if you are up to the challenge, feel free to play</p>
+                            <a href="{{ action('HomeController@whacka') }}"><button type="button">Play</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
@@ -309,25 +342,21 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Title</h2>
+                            <h2>Blog</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                            <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                    </strong>
+                            <p>I created a blog using the Laravel framework and Javascript. A user can login and view their posts or search for posts.</p>
+                            <p>Key Points: 
+                            <ul class="list">
+                                <li>I used a jQuery library to add some animation to the site
                                 </li>
-                                <li>Date:
-                                    <strong><a href="http://startbootstrap.com">April 2014</a>
-                                    </strong>
+                                <li>Added conditions were placed so guests(users that are not logged in) cannot access certain pages of the blog
                                 </li>
-                                <li>Service:
-                                    <strong><a href="http://startbootstrap.com">Web Development</a>
-                                    </strong>
+                                <li>As an added, I utilized a text sentiment API that will provide a result based on the user's blog post. I wanted the blog to be more of a venting diary rather than a typical blog. 
                                 </li>
                             </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            </p>
+                        
+                            <a href="{{ action('PostsController@index') }}"><button type="button">View Blog</button>
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@
 </head>
 
 <body>
- <p> The random number is {{{ $random; }}} and your guess was {{ $guess; }} </p>
+ <p> The random number is {{{ $random }}} and your guess was {{ $guess }} </p>
 
  @if ($guess > $random) 
  	<h2>You are higher</h2>

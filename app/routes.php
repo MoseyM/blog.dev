@@ -22,5 +22,7 @@ Route::get('search' , 'PostsController@index');
 
 Route::get('whacka','HomeController@whacka');
 
+Route::get('blogIntro', 'HomeController@blogIntro');
+
 
 

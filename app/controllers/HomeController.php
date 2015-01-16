@@ -11,6 +11,10 @@ class HomeController extends BaseController {
 		return View::make('whacka.index');
 	}
 
+	public function blogIntro()
+	{
+		return View::make('posts.intro');
+	}
 	public function chkAuth() {
 		if (Auth::check()) {
 			return Redirect::action('PostsController@index');
@@ -18,6 +22,7 @@ class HomeController extends BaseController {
 			return View::make('login');
 		}
 	}
+
 	public function dologin()
 	{
 		$email = Input::get('email');

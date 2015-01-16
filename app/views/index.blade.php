@@ -344,7 +344,7 @@
                         <div class="modal-body">
                             <h2>Blog</h2>
                             <hr class="star-primary">
-                            <p>I created a blog using the Laravel framework and Javascript. A user can login and view their posts or search for posts.</p>
+                            <p>My blog was created using the Laravel framework and Javascript. A user can login and view their posts or search for posts.</p>
                             <p>Key Points: 
                             <ul class="list">
                                 <li>I used a jQuery library to add some animation to the site
@@ -353,10 +353,10 @@
                                 </li>
                                 <li>As an added, I utilized a text sentiment API that will provide a result based on the user's blog post. I wanted the blog to be more of a venting diary rather than a typical blog. 
                                 </li>
+                                    <a href="{{ action('HomeController@blogIntro') }}"><button type="button" class="btn btn-default"> The Blog Experience</button></a>
                             </ul>
                             </p>
                         
-                            <a href="{{ action('PostsController@index') }}"><button type="button">View Blog</button>
                         </div>
                     </div>
                 </div>

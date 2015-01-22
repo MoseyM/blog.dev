@@ -24,5 +24,6 @@ Route::get('whacka','HomeController@whacka');
 
 Route::get('blogIntro', 'HomeController@blogIntro');
 
+Route::get('affordIt', 'HomeController@affordIt');
 
 

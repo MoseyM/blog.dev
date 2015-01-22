@@ -57,4 +57,8 @@ class HomeController extends BaseController {
 	{
 		return View::make('about');
 	}
+	public function affordIt()
+	{
+		return View::make('affordIt');
+	}
 }

@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	    <title>Margaret's Resume</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	    <title> @yield('title') </title>
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+		<link href="/css/freelancer.css" rel="stylesheet">
 		<link rel="stylesheet" href="/css/animate.css">
+		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 		<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="/css/master_style.css">
 		@yield('additionalStyle')

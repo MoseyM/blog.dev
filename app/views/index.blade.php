@@ -30,7 +30,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-             <a href="#page-top">Home</a>
+             <a href="#page-top"><img src="/img/HomeImg/home.png" id="navbar-img"></a>
 
             </div>
 

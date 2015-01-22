@@ -16,6 +16,11 @@ p.small {
     font-size: 16px;
 }
 
+#navbar-img {
+    max-width: 25%;
+    max-height: 25%;
+}
+
 a,
 a:hover,
 a:focus,

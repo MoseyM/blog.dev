@@ -11,9 +11,9 @@ class HomeController extends BaseController {
 		return View::make('whacka.index');
 	}
 
-	public function blogIntro()
+	public function blog()
 	{
-		return View::make('posts.intro');
+		return View::make('blog.index');
 	}
 	public function chkAuth() {
 		if (Auth::check()) {

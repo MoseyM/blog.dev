@@ -9,11 +9,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>moseJem - Exquisite</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/freelancer.css" rel="stylesheet">
+    <link href="/css/freelancer.css" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 </head>
@@ -327,7 +327,7 @@
                                 </li>
                                 <li>As an added, I utilized a text sentiment API that will provide a result based on the user's blog post. I wanted the blog to be more of a venting diary rather than a typical blog. 
                                 </li>
-                                    <a href="{{ action('HomeController@blogIntro') }}"><button type="button" class="btn btn-default"> The Blog Experience</button></a>
+                                    <a href="{{ action('HomeController@blog') }}"><button type="button" class="btn btn-default"> The Blog Experience</button></a>
                             </ul>
                             </p>
                         

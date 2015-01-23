@@ -28,7 +28,7 @@ class PostsController extends \BaseController
 			return Redirect::back();
 		}
 		// MUST include info you want to use in the view by passing it with the with()
-		return View::make('posts.index')->with('posts', $posts)->with('search',$search);
+		return View::make('blog.index')->with('posts', $posts);
 	}
 	/**
 	 * Show the form for creating a new resource.

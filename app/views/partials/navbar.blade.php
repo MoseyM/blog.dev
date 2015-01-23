@@ -1,5 +1,5 @@
-  <nav class="navbar navbar-default navbar-custom" role="navigation">
-  <div class="container-fluid">
+  <nav class="navbar navbar-custom" role="navigation">
+  <div class="navbar-contain">
     <!-- Brand and toggle get grouped for better mobile display --> 
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="aboutMe">
@@ -8,11 +8,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">LOGO</a>
+      <a class="navbar-brand" href="/">Back</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="aboutMe">
+    <div class="collapse navbar-collapse navbar-right" id="aboutMe">
       <ul class="nav navbar-nav" id="selectDir">
         <li><a href="{{{ action('PostsController@index') }}}">Recent Posts</a></li>
         @if (Auth::check())
@@ -31,13 +31,6 @@
         @else 
         <li><a href="{{{ action('HomeController@showlogin') }}}">Login</a></li>
         @endif
-        <!-- search bar -->
-        <li>
-          {{ Form::open(['action'=>'PostsController@index', 'method'=>'GET', 'class'=>'form-inline']) }} 
-          {{ Form::text('searchKey', null, ['class' => 'form-control', 'placeholder' => 'Search By Title Here']) }}
-          {{ Form::submit('search') }}
-          {{ Form::close() }}
-        </li>
       </ul>
         </li>
       </ul>

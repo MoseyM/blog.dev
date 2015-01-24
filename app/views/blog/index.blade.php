@@ -20,7 +20,7 @@
 	<div class="content-functions">
 		<div>
 			{{ Form::open(['action'=>'PostsController@index', 'method'=>'GET', 'class'=>'form-inline']) }} 
-			{{ Form::text('searchKey', "<span class='glyphicon glyphicon-search search-icon' aria-hidden='true'></span> Search", ['class' => 'form-control', 'placeholder' => "Search"]) }}
+			{{ Form::text('searchKey', null, ['class' => 'form-control', 'placeholder' => "Search"]) }}
 			{{ Form::submit('search') }}
 			{{ Form::close() }}
 		</div>

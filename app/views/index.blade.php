@@ -327,7 +327,7 @@
                                 </li>
                                 <li>As an added, I utilized a text sentiment API that will provide a result based on the user's blog post. I wanted the blog to be more of a venting diary rather than a typical blog. 
                                 </li>
-                                    <a href="{{ action('HomeController@blog') }}"><button type="button" class="btn btn-default"> The Blog Experience</button></a>
+                                    <a href="{{ action('PostsController@index') }}"><button type="button" class="btn btn-default"> The Blog Experience</button></a>
                             </ul>
                             </p>
                         
@@ -378,7 +378,7 @@
                             <img src="/img/portfolio/hostndine.jpg" class="img-responsive img-centered" alt="">
                             <p>Host N Dine was made in two weeks with a group of three people. The web application deals with creating a dining experience in the comfort of a user's home. Basically, users can invite themselves to another user's home for an evening of food, drinks and new friends. This is a movement we wanted to convey and is like an alternative to going to a restaurant or club.</p>
                             
-                            <a href="http://www.hostndine.com"><button type="button" class="btn btn-default" data-dismiss="modal"> Host N Dine</button></a>
+                            <a href="http://hostndine.com/" target="_blank"><button type="button" class="btn btn-default"> Host N Dine</button></a>
                         </div>
                     </div>
                 </div>

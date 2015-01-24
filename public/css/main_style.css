@@ -45,6 +45,8 @@ font: #FFF3E0
 	float: left;
 	padding-right: 0.5%;
 	display: inline-block;
+	font-size: 0.75em;
+	opacity: 1.0;
 }
 .content-icons {
 	width: 25%;

@@ -5,14 +5,8 @@
 @section('title') The Blog Experience @stop
 @section('content')
 	<div class="content-posts">
-		@foreach ($posts as $post)
-			<div class="post">
-				<h2><a href="{{{ action('PostsController@show', $post->id) }}}">{{{ $post->title }}} </a></h2>
-				<p> {{{ $post->body }}} </p>
-				<span class="spanStyle"><a href="{{{ action('PostsController@edit', $post->id) }}}"> EDIT </a></span>
-				<span class="timeStyle">{{ $post->created_at->format('l, M jS Y'); }}</span>
-			</div>
-		@endforeach
+	{{ $posts }}
+		
 	</div>
 	<div class="content-icons">
 		<p> Tester </p>

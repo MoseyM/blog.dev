@@ -26,4 +26,8 @@ Route::get('blog', 'PostsController@index');
 
 Route::get('affordIt', 'HomeController@affordIt');
 
+Route::get('index_template', function() {
+	return View::make('index_template');
+});
+
 

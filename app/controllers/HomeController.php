@@ -10,11 +10,7 @@ class HomeController extends BaseController {
 	{
 		return View::make('whacka.index');
 	}
-
-	public function blog()
-	{
-		return View::make('blog.index');
-	}
+	
 	public function chkAuth() {
 		if (Auth::check()) {
 			return Redirect::action('PostsController@index');
@@ -29,7 +25,7 @@ class HomeController extends BaseController {
 		$password = Input::get('password');
 		if (Auth::attempt(array('email' => $email, 'password' => $password), false, true)) {
 			// return 'test';
-		    return Redirect::intended('posts');
+		    return Redirect::action('PostsController@index');
 		} else {
 			Session::flash('errorMessage', 'Failed to Authenticate.');
 			return Redirect::back();

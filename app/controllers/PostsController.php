@@ -14,14 +14,14 @@ class PostsController extends \BaseController
 	public function index()
 	{
 		// setting a var to the search object and adding eager loading for quicker searching if not null.
-		$query = Post::with('user');
+		$query = User::findorfail(Auth::id())->post;
 		$search = Input::get('searchKey');
 		// if statement will add on the where method that will change query to only hold info related to searchTerm
 		if (Input::has('searchKey')) {
 			$query->where('title', 'LIKE' , "%{$search}%");
 		}
 		//Universal no matter if search or not actions that will apply to our query
-		$posts = $query->orderBy('created_at', 'desc')->paginate(4);
+		$posts = $query;
 
 		if (Input::get('searchKey') && count($posts) <= 0) {
 			Session::flash('errorMessage', 'There are no results matching your search.');

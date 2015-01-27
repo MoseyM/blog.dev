@@ -24,6 +24,7 @@
 					{{ Form::password('password', ['class' => 'form-control' , 'placeholder' => 'Password']) }}
 					{{ Form::submit('Log In!') }}
 					{{ Form::close() }}
+					<p>Don't have an Account? <a href="{{ action('HomeController@register') }}"> Sign Up </a>
 				</div>
 			</div>
     </div> 
@@ -31,8 +32,11 @@
 </div>
 @stop
 
-@section('jquery')
-	$(function() {
-		$('#loginModal').modal('show');
-		});
+@section('endscript')
+	<script type="text/javascript">
+			$(function() {
+				$('#loginModal').modal('show');
+			@yield('endscript')
+			});
+		</script>
 @stop

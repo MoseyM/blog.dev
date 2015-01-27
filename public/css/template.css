@@ -1,0 +1,58 @@
+.navbar-top {
+	background-color: #3A0F0F;
+	height: auto;
+	position: fixed;
+	width: 100%;
+	padding:0.5%;
+	top: 0px;
+}
+body {
+	background: url('/img/blog_background.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+ 	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	padding-top: 30px;
+  	color: #FFF3E0;
+  	font-weight: 500;
+}
+
+a,
+a:linked {
+	color: #9C27B0;
+}
+
+.content-box {
+	background-color: #FF5722;
+	opacity: 0.70;
+	border-radius: 10px;
+	position: relative;
+	margin-top: 100px;
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 10px;
+}
+.content-left {
+	width: 60%;
+	float: left;
+	padding-right: 10px;
+}
+
+.content-right {
+	width: 35%;
+	float: left;
+	border-left: 2px dotted #D500F9;
+	padding-left: 10px;
+}
+.home-button {
+	background-color: transparent;
+	width: auto;
+}
+#loginModal {
+	display: none;
+}
+.right-login {
+	display: inline;
+
+}

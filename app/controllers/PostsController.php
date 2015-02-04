@@ -14,7 +14,7 @@ class PostsController extends \BaseController
 	public function index()
 	{
 		// setting a var to the search object and adding eager loading for quicker searching if not null.
-		$query = User::findorfail(Auth::id())->post;
+		$query = Post::paginate(5);
 		$search = Input::get('searchKey');
 		// if statement will add on the where method that will change query to only hold info related to searchTerm
 		if (Input::has('searchKey')) {

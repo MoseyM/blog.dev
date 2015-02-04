@@ -30,4 +30,7 @@ Route::get('index_template', function() {
 	return View::make('index_template');
 });
 
+Route::get('jobForm', function() {
+	return View::make('job.sendEmail');
+});
 

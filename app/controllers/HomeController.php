@@ -10,7 +10,7 @@ class HomeController extends BaseController {
 	{
 		return View::make('whacka.index');
 	}
-	
+
 	public function chkAuth() {
 		if (Auth::check()) {
 			return Redirect::action('PostsController@index');
@@ -21,7 +21,7 @@ class HomeController extends BaseController {
 
 	public function dologin()
 	{
-		$email = Input::get('email');
+		$email = Input::get('username');
 		$password = Input::get('password');
 		if (Auth::attempt(array('email' => $email, 'password' => $password), false, true)) {
 			// return 'test';
@@ -31,7 +31,9 @@ class HomeController extends BaseController {
 			return Redirect::back();
 		}
 	}
-
+	public function register() {
+		
+	}
 	public function dologout()
 	{
 		Auth::logout();
@@ -41,7 +43,8 @@ class HomeController extends BaseController {
 
 	public function redirResume()
 	{
-		return View::make('resume');
+		$skills = Skill::get();
+		return View::make('resume')->with('skills', $skills);
 	}
 
 	public function redirPortfolio()

@@ -1,7 +1,6 @@
-<!-- //Work on the scoreboard so points are accumulated when clicked.
- -->
-<!DOCTYPE html>
-<? require_once 'includes/includeIndex.php'; ?>
+@extends('layouts.master')
+{{ File::requireOnce('includes/includeIndex.php') }}
+require_once 'includes/includeIndex.php';
 <html>
 	<head>
 		<title></title>

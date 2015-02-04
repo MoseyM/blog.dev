@@ -1,39 +1,30 @@
-  <nav class="navbar navbar-custom" role="navigation">
-  <div class="navbar-contain">
-    <!-- Brand and toggle get grouped for better mobile display --> 
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="aboutMe">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="/">Back</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-right" id="aboutMe">
-      <ul class="nav navbar-nav" id="selectDir">
-        <li><a href="{{{ action('PostsController@index') }}}">Recent Posts</a></li>
-        @if (Auth::check())
-        <li>
-        <a href="{{{ action('PostsController@create') }}}">New Post</a>
-        </li>
-        @endif
-      </ul>
-      @if (Auth::check())
-      <h5 id='welcomeSign'> Welcome, {{ Auth::user()->email }}! </h5>
-      @endif
-
-      <ul class="nav navbar-nav navbar-right">
-        @if (Auth::check())
-        <li><a href="{{{ action('HomeController@dologout') }}}">Logout</a></li>
-        @else 
-        <li><a href="{{{ action('HomeController@showlogin') }}}">Login</a></li>
-        @endif
-      </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+<div class="navbar-top" id="navbar">
+	<ul class="list-inline">
+		<li>
+			<button class="btn btn-default dropMenu"><a href="{{ url('/') }}"> Home </a></button>
+		</li>
+	</ul>
+	<ul class="list-inline right">
+		<li>
+			<div class="dropdown">
+				<button class="btn btn-default dropdown-toggle dropMenu" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+				My Work
+				<span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1">
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="{{ action('HomeController@whacka') }} ">WhackaMole</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="{{ action('PostsController@index') }}">Blog</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="http://hostndine.com/">Host N Dine</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="{{ action('HomeController@affordIt') }}">Can You Afford It?</a></li>
+				</ul>
+			</div>
+		</li>
+		<li>
+			<a href="{{ action('HomeController@about') }}">Contact Me</a>
+		</li>
+		<li>
+			<a href="{{ action('HomeController@redirResume') }}">My Resume</a>
+		</li>
+		</div>
+	</ul>
+</div>

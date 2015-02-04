@@ -1,0 +1,309 @@
+BODY 	{
+	scrollbar-base-color: #370C06;
+	scrollbar-track-color: #6F3529;
+	margin: 0px;
+	padding: 0px;
+	border: #FFFFFF 0px solid;
+	}
+
+
+
+
+/* PAGE LINK COLORS */
+
+a:link		{ color: #000000; text-decoration: none; }
+
+a:visited	{ color: #000000; text-decoration: none; }
+
+a:active	{ color: #000000; text-decoration: none; }
+
+a:hover		{ color: #669999; text-decoration: none; }
+
+
+
+
+/* THE NEXT LINE IS THE MAIN PAGE FONT */
+
+TABLE 		{ COLOR: #833C33; FONT: 12px arial, verdana, sans-serif; font-weight: normal; }
+
+.title 		{ color: #370C06; font: 24px Papyrus, "Bradley Hand ITC", "Lucida Handwriting", "Comic Sans MS", "Trebuchet MS", arial, sans-serif; font-weight: normal; }
+
+.subtitle 	{ color: #663300; font: 15px arial, verdana, sans-serif; font-weight: bold; }
+
+.careers 	{ COLOR: #006666; FONT: 12px arial, verdana, sans-serif; font-weight: normal; }
+
+.list 		{ COLOR: #996600; FONT: 14px arial, verdana, sans-serif; font-weight: normal; }
+
+.just 		{ text-align: justify; }
+
+.formmargin	{ margin: 0px; }
+
+
+
+.background-main	{
+			background-color: #F7E6BB;
+			background-image: url("http://www.valuefunding.net/picts/background-center.jpg");
+			}
+
+
+
+
+
+/* FOOTER */
+
+.footerback	{
+		background-color: #F7E6BB;
+		background-image: url("http://www.valuefunding.net/picts/footer-background.jpg");
+		background-repeat: repeat-x;
+		height: 27px;
+		}
+
+.footershadow	{
+		background-color: #FFFFFF;
+		background-image: url("http://www.valuefunding.net/picts/footershadow.gif");
+		background-repeat: repeat-x;
+		height: 30px;
+		}
+
+.footertext 	{ COLOR: #833C33; FONT: 10px arial, verdana, sans-serif; font-weight: normal; }
+
+
+
+
+
+/* PAGE IMAGE BORDERS */
+
+.borders	{ BORDER: #A57067 1px solid; padding: 3px; }
+
+.bordersblack	{ BORDER: #000000 1px solid; }
+
+
+
+
+
+
+/* RIGHT SIDEBAR AREA BORDERS, CODE AND COLORS */
+
+
+a.sidelink:link		{ color: #CCFFCC; text-decoration: none }
+
+a.sidelink:visited	{ color: #CCFFCC; text-decoration: none }
+
+a.sidelink:active	{ color: #CCFFCC; text-decoration: none }
+
+a.sidelink:hover	{ color: #99FF66; text-decoration: none }
+
+.linkfont		{ font: 13px Papyrus, "Bradley Hand ITC", "Lucida Handwriting", "Comic Sans MS", "Trebuchet MS", arial, sans-serif; font-weight: bold; }
+
+
+.phonetitle 		{ color: #CCCC99; font: 12px arial, verdana, sans-serif; font-weight: bold; }
+
+.sidebarcontact		{ color: #FFFFFF; font: 11px arial, verdana, sans-serif; font-weight: bold; }
+
+
+.sidebar	{ background-color: #370C06;
+		  background-image: url("http://www.valuefunding.net/picts/background-sidebar.jpg");
+		  border-left: 0px solid #FFFFFF;
+		  width: 200px; }
+
+
+.sidebarleft	{ background-color: #370C06;
+		  background-image: url("http://www.valuefunding.net/picts/background-sidebar.jpg");
+		  border-right: 0px solid #FFFFFF;
+		  width: 35px; }
+
+
+.sidebartitle	{ color: #FFFFFF; font: 14px arial, verdana, sans-serif; font-weight: bold; }
+
+.sidebarfield 	{
+		border: 1px solid #A57067;
+		text-align: left;
+		-moz-border-radius: 3px;
+		padding-left: 5px;
+		padding-right: 5px;
+		padding-top: 5px;
+		padding-bottom: 6px;
+		width: 156px;
+		max-width: 144px;
+		COLOR: #FFFFFF;
+		FONT: 11px arial, verdana, sans-serif;
+		font-weight: normal;
+		display: block;
+		}
+
+
+
+
+
+
+
+
+/* HIDE MENU AND ITEMS FOR PRINTING */
+
+
+@media print {
+.printhide 	{ display:none; }
+.printhelp	{ width:600px; }
+}
+@media screen{
+.printonly 	{ display:none; }
+}
+
+
+
+
+
+
+
+
+/* GALLERY AND SLIDESHOW */
+
+.Galborder	 	{ border: #FFFFFF 5px solid; margin-bottom: 2px; }
+
+A:hover .Galborder 	{ border: #370C06 1px solid; margin: 4px; margin-bottom: 6px;  }
+
+.viewer-border	 	{ border: #FFFFFF 10px solid; }	
+
+.picturetitle 		{ COLOR: #000000; FONT: 12px Papyrus, "Bradley Hand ITC", verdana, arial, sans-serif; font-weight: bold; }
+
+.gallerytext 		{ COLOR: #000000; FONT: 10px arial, verdana, sans-serif; font-weight: bold; }
+
+.paypalmargin		{ margin: 3px; }
+
+
+.button-gallery 	{
+			color: #370C06;
+	       		FONT-FAMILY: Papyrus, "Bradley Hand ITC", "Lucida Handwriting", "Comic Sans MS", "Trebuchet MS", arial, sans-serif;
+			font-size: 8pt;
+			font-weight: bold;
+			text-align: center;
+			background-color: #E1C590;
+        		padding: 0px 5px 0px 5px;
+			margin: 0px 1px 0px 1px;
+        		display: block;
+			cursor:pointer;
+        		border: #370C06 1px solid;
+			}
+
+
+.buttonon-gallery	{
+			color: #FFFFFF;
+	       		FONT-FAMILY: Papyrus, "Bradley Hand ITC", "Lucida Handwriting", "Comic Sans MS", "Trebuchet MS", arial, sans-serif;
+			font-size: 8pt;
+			font-weight: bold;
+			text-align: center;
+			background-color: #334D3B;
+        		padding: 0px 5px 0px 5px;
+			margin: 0px 1px 0px 1px;
+        		display: block;
+			cursor:pointer;
+        		border: #000000 1px solid;
+			}
+
+
+
+
+
+
+
+/* PAYPAL CART PAGE CODE */
+
+.paypalbutton	{ font-size: 10pt; width: 140px; }
+
+.price 		{ COLOR: #FF6600; FONT: 13px verdana, arial, sans-serif; font-weight: bold; }
+
+
+
+
+
+/* CONTACT AND QUOTE FORM CODE */
+
+
+.contact 	 { font-size: 10pt; }
+
+
+.contacton 	 { font-size: 10pt; }
+
+
+.shadeform	{ FONT: 13px arial, verdana, sans-serif;
+		background-image: url("http://www.valuefunding.net/picts/shadeform.gif");
+		text-align: left;
+		WIDTH: 200PX;
+		BORDER: #000000 1px solid; }
+
+.textarea	{ FONT: 13px arial, verdana, sans-serif;
+		background-image: url("http://www.valuefunding.net/picts/shadeform.gif");
+		text-align: left;
+		WIDTH: 250PX;
+		HEIGHT: 125PX;
+		BORDER: #000000 1px solid; }
+
+.dropdown 	{ COLOR: #833C33;
+		BACKGROUND-COLOR: #FFEFD6;
+		WIDTH: 220PX;
+		FONT: 11px verdana, arial, sans-serif; }
+
+
+.quoteform	{ FONT: 13px arial, verdana, sans-serif;
+		background-image: url("http://www.valuefunding.net/picts/shadeform.gif");
+		text-align: left;
+		BORDER: #000000 1px solid; }
+
+
+.quotedrop 	{ COLOR: #833C33;
+		BACKGROUND-COLOR: #FFEFD6;
+		FONT: 11px verdana, arial, sans-serif; }
+
+.quotechoice	{ COLOR: #003333; FONT: 11px verdana, arial, sans-serif; font-weight: normal }
+
+
+
+
+
+
+
+
+
+/* START THE CODE FOR THE MENUS */
+
+
+
+.menubackground		{ background-color:#370C06;
+			  border-top: #370C06 1px solid;
+			  border-bottom: #370C06 1px solid;
+			  background-image: url("http://www.valuefunding.net/picts/background-menu.gif"); }
+
+
+
+.menu		{ font-family: Papyrus, verdana, arial, helvetica, sans-serif;
+		  font-size: 14px;
+		  height: 25px;
+		  padding-left: 8px;
+		  padding-right: 8px;
+		  cursor:hand;
+		  font-weight: bold;
+		  text-align: center;
+		  line-height: 22px;
+		  display: block;
+		  border: #370C06 0px solid; }
+
+
+a.menu:link 	{ background-image: url("http://www.valuefunding.net/picts/menu.gif");
+		  background-color:#370C06;
+		  color: #A57067; }
+
+
+a.menu:visited 	{ background-image: url("http://www.valuefunding.net/picts/menu.gif");
+		  background-color:#370C06;
+		  color: #A57067; }
+
+
+a.menu:active 	{  background-image: url("http://www.valuefunding.net/picts/menu.gif");
+		   background-color:#370C06;
+		   color: #A57067; }
+
+
+a.menu:hover 	{  background-image: url("http://www.valuefunding.net/picts/menuon.gif");
+		   background-color:#334D3B;
+		   color: #FFFFFF; }
+

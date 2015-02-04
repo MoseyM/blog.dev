@@ -60,4 +60,13 @@ class HomeController extends BaseController {
 	{
 		return View::make('affordIt');
 	}
+
+	public function skills()
+	{
+		$skill = new Skill();
+		$skill->skill = Input::get('skill');
+		$skill->level = Input::get('level');
+		$skill->save();
+		return Redirect::action('PostsController@index');
+	}
 }

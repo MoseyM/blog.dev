@@ -10,6 +10,10 @@ Route::get('/', function() {
 	return View::make('index');
 });
 
+Route::get('skills', function() {
+	return View::make('job.skills');
+});
+
 Route::get('resume','HomeController@redirResume');
 
 Route::get('home' , 'HomeController@redirResume');
@@ -25,6 +29,8 @@ Route::get('whacka','HomeController@whacka');
 Route::get('blog', 'PostsController@index');
 
 Route::get('affordIt', 'HomeController@affordIt');
+
+Route::post('skills','HomeController@skills');
 
 Route::get('index_template', function() {
 	return View::make('index_template');

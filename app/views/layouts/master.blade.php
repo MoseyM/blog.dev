@@ -13,10 +13,10 @@
 		@yield('additionalStyle')
 	</head>
 	<body>
-		@if (!Request::is('posts*'))
-			@include('partials.navbar')
-		@else
+		@if (Request::is('/posts*'))
 			@include('partials.blog_navbar')
+		@else
+			@include('partials.navbar')
 		@endif
 		<div class="container-fluid-custom" id="adjustContainer">
 				@if (Session::has('successMessage'))

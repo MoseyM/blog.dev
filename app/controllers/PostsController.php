@@ -14,20 +14,18 @@ class PostsController extends \BaseController
 	public function index()
 	{
 		// setting a var to the search object and adding eager loading for quicker searching if not null.
-		$query = Post::paginate(5);
+		$query = Post::with('user');
 		$search = Input::get('searchKey');
 		// if statement will add on the where method that will change query to only hold info related to searchTerm
 		if (Input::has('searchKey')) {
 			$query->where('title', 'LIKE' , "%{$search}%");
 		}
-		//Universal no matter if search or not actions that will apply to our query
-		$posts = $query;
+		$posts = $query->paginate(5);
 
 		if (Input::get('searchKey') && count($posts) <= 0) {
 			Session::flash('errorMessage', 'There are no results matching your search.');
 			return Redirect::back();
 		}
-		// MUST include info you want to use in the view by passing it with the with()
 		return View::make('blog.index')->with('posts', $posts);
 	}
 	/**

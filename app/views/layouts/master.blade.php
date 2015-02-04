@@ -13,7 +13,7 @@
 		@yield('additionalStyle')
 	</head>
 	<body>
-		@if (Request::is('/posts*'))
+		@if (Request::is('posts*'))
 			@include('partials.blog_navbar')
 		@else
 			@include('partials.navbar')

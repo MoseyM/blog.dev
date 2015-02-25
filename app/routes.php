@@ -14,6 +14,7 @@ Route::get('skills', function() {
 	return View::make('job.skills');
 });
 
+Route::get('showAfford', 'HomeController@showAfford');
 Route::get('resume','HomeController@redirResume');
 
 Route::get('home' , 'HomeController@redirResume');
@@ -29,6 +30,8 @@ Route::get('whacka','HomeController@whacka');
 Route::get('blog', 'PostsController@index');
 
 Route::get('affordIt', 'HomeController@affordIt');
+
+Route::get('showMyWork', 'HomeController@showMyWork');
 
 Route::post('skills','HomeController@skills');
 

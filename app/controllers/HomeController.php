@@ -6,11 +6,16 @@ class HomeController extends BaseController {
 		return View::make('login');
 	}
 
+	public function showMyWork() {
+		return View::make('work');
+	}
 	public function whacka() 
 	{
 		return View::make('whacka.index');
 	}
-
+	public function showAfford(){
+		return View::make('afford.index');
+	}
 	public function chkAuth() {
 		if (Auth::check()) {
 			return Redirect::action('PostsController@index');

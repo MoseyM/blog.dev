@@ -15,7 +15,7 @@
 					Created custom code for our hosting application that returned a grade based on the user’s input
 				</li>
 				<li>
-					We utilized social media, email, <a href="https://github.com/DMP-Capstone/TableMaster">GitHub</a> and other communication channels to ensure an open channel between one another
+					We utilized social media, email, <a href="https://github.com/MoseyM">GitHub</a> and other communication channels to ensure an open channel between one another
 				</li>
 			</ul>
 
@@ -26,7 +26,7 @@
 					Handled the server-side to connect my IP address to my server
 				</li>
 				<li>
-					Source code can be found on <a href="https://github.com/DMP-Capstone/blog.dev">GitHub</a>
+					Source code can be found on <a href="https://github.com/MoseyM/blog.dev">GitHub</a>
 				</li>
 				<li>
 					Personal site used to display work and practice my web developing skills

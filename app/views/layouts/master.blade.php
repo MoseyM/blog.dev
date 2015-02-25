@@ -3,7 +3,7 @@
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" type="text/css" href="/css/template.css">
+		<link rel="stylesheet" type="text/css" href="/css/master.css">
 		<link rel="stylesheet" href="/css/animate.css">
 		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">

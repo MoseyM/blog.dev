@@ -16,6 +16,11 @@ class HomeController extends BaseController {
 	public function showAfford(){
 		return View::make('afford.index');
 	}
+	public function showBlog()
+	{
+		return View::make('blog.home');
+	}
+
 	public function chkAuth() {
 		if (Auth::check()) {
 			return Redirect::action('PostsController@index');

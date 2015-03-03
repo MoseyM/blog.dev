@@ -19,17 +19,19 @@
 			@include('partials.navbar')
 		@endif
 		<div class="container-fluid-custom" id="adjustContainer">
-				@if (Session::has('successMessage'))
-					<div class="alert alert-success yes">
-				{{{ Session::get('successMessage') }}}</div>
-				@endif
-				@if (Session::has('errorMessage'))
-					<div class="alert alert-danger no">{{{ Session::get('errorMessage') }}}</div>
-				@endif
-				<p id="errorsMsg">
-					{{ (!empty($errors)) ? $errors->first('title', '<span class="help-block">:message</span>') : ''}}
-					{{ (!empty($errors)) ? $errors->first('body', '<span class="help-block">:message</span>') : ''}}
-				</p>
+			@if (Session::has('successMessage'))
+				<div class="alert alert-success yes">
+					{{{ Session::get('successMessage') }}}
+				</div>
+			@elseif (Session::has('errorMessage'))
+				<div class="alert alert-danger no">
+					{{{ Session::get('errorMessage') }}}
+				</div>
+			@endif
+			<p id="errorsMsg">
+				{{ (!empty($errors)) ? $errors->first('title', '<span class="help-block">:message</span>') : ''}}
+				{{ (!empty($errors)) ? $errors->first('body', '<span class="help-block">:message</span>') : ''}}
+			</p>
 			@yield('content')
 		</div>
 
@@ -37,25 +39,24 @@
 		<script src="/js/bootstrap.min.js"></script>
 		<script type="text/javascript">
 		var bodyPadding = $('#navbar').height();
-		var wholeScreen = document;
-		var scrHeight = Math.max(
-	        wholeScreen.body.scrollHeight, wholeScreen.documentElement.scrollHeight,
-	        wholeScreen.body.offsetHeight, wholeScreen.documentElement.offsetHeight,
-	        wholeScreen.body.clientHeight, wholeScreen.documentElement.clientHeight
-    	);
-		var windowHeight = $(window).height();
-		function set_container_height() 
-		{
-			if (scrHeight >= windowHeight) {
-	    		$('#adjustContainer').height(scrHeight).css({"padding-top":bodyPadding});
-	    	} else {
-	    		$('#adjustContainer').height(windowHeight).css({"padding-top":bodyPadding});
-	    	}
-	  	}
+		// var wholeScreen = document;
+		// var scrHeight = Math.max(
+	 //        wholeScreen.body.scrollHeight, wholeScreen.documentElement.scrollHeight,
+	 //        wholeScreen.body.offsetHeight, wholeScreen.documentElement.offsetHeight,
+	 //        wholeScreen.body.clientHeight, wholeScreen.documentElement.clientHeight
+  //   	);
+		// var windowHeight = $(window).height();
+		// function set_container_height() 
+		// {
+		// 	if (scrHeight >= windowHeight) {
+	 //    		$('#adjustContainer').height(scrHeight).css({"padding-top":bodyPadding});
+	 //    	} else {
+	 //    		$('#adjustContainer').height(windowHeight).css({"padding-top":bodyPadding});
+	 //    	}
+	 //  	}
 	  	// $('#loginForm').addClass('animated bounceIn'); EXAMPLE use of Animate
 		$(function() {
-			$(window).bind('resize', set_container_height);
-			set_container_height();
+			$('#adjustContainer').css({"padding-top":bodyPadding});
 			$('#login').click(function(e) {
 				$('#lModal').modal('toggle');
 			});

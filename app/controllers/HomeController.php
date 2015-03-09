@@ -21,6 +21,10 @@ class HomeController extends BaseController {
 		return View::make('blog.home');
 	}
 
+	public function contactMe() {
+		return Redirect::url('/');
+	}
+
 	public function chkAuth() {
 		if (Auth::check()) {
 			return Redirect::action('PostsController@index');

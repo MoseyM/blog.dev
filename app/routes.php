@@ -31,6 +31,8 @@ Route::get('blog', 'HomeController@showBlog');
 
 Route::get('affordIt', 'HomeController@affordIt');
 
+Route::post('contact', 'HomeController@contactMe');
+
 Route::get('showMyWork', 'HomeController@showMyWork');
 
 Route::post('skills','HomeController@skills');

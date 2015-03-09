@@ -45,6 +45,9 @@ a:visited {
 	color: inherit;
 	background: transparent;
 }
+.form-control {
+	margin-bottom: 10px;
+}
 .list-inline>li {
 	padding:0 !important;
 }

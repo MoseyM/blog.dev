@@ -57,8 +57,11 @@
 	  	// $('#loginForm').addClass('animated bounceIn'); EXAMPLE use of Animate
 		$(function() {
 			$('#adjustContainer').css({"padding-top":bodyPadding});
-			$('#login').click(function(e) {
-				$('#lModal').modal('toggle');
+			// $('#login').click(function(e) {
+			// 	$('#lModal').modal('toggle');
+			// });
+			$('#openContact').click(function() {
+				$('#contactModal').modal('toggle');
 			});
 			@yield('endscript')
 		});

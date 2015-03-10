@@ -7,7 +7,7 @@ Route::get('logout', 'HomeController@dologout');
 Route::resource('posts', 'PostsController');
 
 Route::get('/', function() {
-	return View::make('index');
+	return View::make('home');
 });
 
 Route::get('skills', function() {

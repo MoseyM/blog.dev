@@ -3,17 +3,21 @@
 	<head>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" type="text/css" href="/css/master.css">
 		<link rel="stylesheet" href="/css/animate.css">
 		<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 	    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 		<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/css/bigvideo.css">
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,400italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="/css/master.css">
 		<title>@yield('title')</title>
 		@yield('additionalStyle')
 	</head>
 	<body>
-		@include('partials.navbar')
+		@if(!(Request::is('/')))
+			@include('partials.navbar')
+		@endif
 		<div class="container-fluid-custom" id="adjustContainer">
 			@if (Session::has('successMessage'))
 				<div class="alert alert-success yes">
@@ -33,6 +37,14 @@
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
+		@if(Request::is('/'))
+		<script>window.jQuery || document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"><\/script>')</script>
+		@endif
+		<script src="/js/jquery-ui.js"></script>
+		<script src="/js/jquery-ui.min.js"></script>
+		<script src="/js/modernizr.custom.73952.js"></script>
+		<script src="/js/video.js"></script>
+		<script src="/js/bigvideo.js"></script>
 		<script type="text/javascript">
 		var bodyPadding = $('#navbar').height();
 		// var wholeScreen = document;

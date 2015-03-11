@@ -1,12 +1,16 @@
 <div class="navbar-top" id="navbar">
 	<ul class="list-inline">
 		<li>
-			<button class="btn btn-link"><a href="{{ url('/') }}"> Home </a></button>
+			<button class="btn btn-link"><a href="{{ url('/index') }}"> Home </a></button>
 		</li>
 	</ul>
 	<ul class="list-inline right">
 		<li>
+			@if(Request::is('index'))
+				<button class="btn btn-link "><a id="#showWork" href="#work">My Work</a></button>
+			@else
 			<button class="btn btn-link "><a id="#showWork" href="{{ action('HomeController@showMyWork') }}">My Work</a></button>
+			@endif
 		</li>
 		<li>
 			<button class="btn btn-link"><a href='#' data-target="#contactModal" id="openContact">Contact Me</a></button>

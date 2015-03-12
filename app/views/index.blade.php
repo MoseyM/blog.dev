@@ -47,7 +47,7 @@
 			padding-top: 54px !important;
 			padding-right: 10px;
 		}
-		/*Work Section*/
+/*Work Section*/
 		#workTitle {
 			text-align: center;
 		}
@@ -60,7 +60,6 @@
 
 		.workDescription {
 			height: 465px;
-			border: 1px solid #BE7ACB;
 			clear: right;
 			overflow: hidden;
 		}
@@ -81,6 +80,7 @@
 		#can {
 			background-image: url('/img/work/work-can.png');
 		}
+/*end Work Section*/
 	</style>
 @stop
 @section('content')
@@ -101,14 +101,47 @@
 				<a href="#" class="workLink"><div class="workBox" id="whacka"></div></a>
 				<a href="#" class="workLink"><div class="workBox" id="can"></div></a>
 			</div>
+{{-- Hidden Work descriptions --}}
 			<div class="workDescription">
-				<p class="pop" data-target="blog">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-				<p class="pop" data-target="whacka">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+				<div class="pop blog">
+					<h2>Blog</h2>
+					<span>What Is It?</span><p>using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their</p>
 
-</p>
-<p class="pop" data-target="can">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+					<span>Software Used</span>
+					<ul>
+						<li>Established</li>
+						<li>Margaret</li>
+						<li>Moseyee</li>
+						<li>Stuff</li>
+					</ul>
+					<button class="btn btn-success">Visit</button>
+				</div>
+				<div class="pop whacka">
+					<h2>WhackaMole Game</h2>
+					<span>What Is It?</span><p>using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their</p>
 
-</p>
+					<span>Software Used</span>
+					<ul>
+						<li>Established</li>
+						<li>Margaret</li>
+						<li>Moseyee</li>
+						<li>Stuff</li>
+					</ul>
+					<button class="btn btn-success">Visit</button>
+				</div>
+<div class="pop can">
+	<h2>Can You Afford It</h2>
+	<span>What Is It?</span><p>using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their</p>
+
+	<span>Software Used</span>
+	<ul>
+		<li>Established</li>
+		<li>Margaret</li>
+		<li>Moseyee</li>
+		<li>Stuff</li>
+	</ul>
+	<button class="btn btn-success">Visit</button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -117,9 +150,11 @@
 @section('endscript')
 $('.pop').hide();
 $(".workLink").click(function(event) {
+	$('.pop').hide();
 	event.preventDefault();
-	var id = $(this).children('div').attr('id');
-	$('.pop').attr('data-target', id).show();
+	var getid = $(this).children('div').attr('id');
+	$('.' + getid).addClass('animated fadeInDown').show();
+	
 });
 @stop
 

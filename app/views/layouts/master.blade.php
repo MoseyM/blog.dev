@@ -11,11 +11,13 @@
 		<link rel="stylesheet" href="/css/bigvideo.css">
 		<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,400italic' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="/css/master.css">
-		<title>@yield('title')</title>
 		@yield('additionalStyle')
+		<title>@yield('title')</title>
 	</head>
 	<body>
-		@if(!(Request::is('/')))
+		@if(Request::is('whacka'))
+			@include('partials.whacka')
+		@elseif(!(Request::is('/')))
 			@include('partials.navbar')
 		@endif
 		<div class="container-fluid-custom" id="adjustContainer">

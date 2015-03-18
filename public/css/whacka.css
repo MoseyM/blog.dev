@@ -5,13 +5,20 @@ body {
 	background-size: cover;
 	font-size: 1.25em;
 }
+#box-container {
+	opacity: 0.90;
+	width: 90%;
+	height: 100vh;
+	margin-left: auto;
+	margin-right: auto;
+}
 .box-size {
-	width: 250px;
-	height: 250px;
+	width: 30%;
+	height: 30%;
 /*	border: white solid 2px;
 */	/*display: none;*/
-	margin-left: auto;
 	float: left;
+	clear: right;
 	}
 .form{
 
@@ -42,16 +49,7 @@ body {
 td, th{
 	border: solid black 1px;
 }
-#box-container {
-	/*background-color: black;*/
-	opacity: 0.90;
-	width: 780px;
-	height: 780px;
-	padding: 10px;
-	margin-left: auto;
-	margin-right: auto;
-	position: relative;	
-}
+
 #score {
 	color: orange;
 	font-size: 2em;

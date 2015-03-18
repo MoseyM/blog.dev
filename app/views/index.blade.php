@@ -15,14 +15,14 @@
 			padding-right: 0 !important;
 		}
 		#profilePic-right {
-			width: 300px;
+			width: 25%;
 			height: 100%;
 			background: url(/img/head-right.png) no-repeat center center;
 			background-size: cover;
 			display: table-cell;
 		}
 		#profilePic-left {
-			width: 300px;
+			width: 25%;
 			height: 100%;
 			background: url(/img/head-left.png) no-repeat center center;
 			background-size: cover;
@@ -31,7 +31,7 @@
 		#aboutMe {
 			font-size: 1.15em;
 			height: 100vh;
-			width: auto;
+			width: 50%;
 			padding-left: 30px;
 			padding-right: 30px;
 			display: table-cell;
@@ -80,6 +80,10 @@
 		#can {
 			background-image: url('/img/work/work-can.png');
 		}
+		.inline-title {
+			font-size: 1.25em;
+			color: red;
+		}
 /*end Work Section*/
 	</style>
 @stop
@@ -105,33 +109,31 @@
 			<div class="workDescription">
 				<div class="pop blog">
 					<h2>Blog</h2>
-					<span>What Is It?</span><p>using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their</p>
+					<p><span class="inline-title">What Is It?</span> It is the ultimate blogging experience. It is a mix between a diary and blog where the user can make some posts private and other seen publicly. There are a plethora of blogs out there and this does not fall into the crowd. It is entirely geared with the user in mind and not the content. So share, enjoy, experience.</p>
 
 					<span>Software Used</span>
 					<ul>
-						<li>Established</li>
-						<li>Margaret</li>
-						<li>Moseyee</li>
-						<li>Stuff</li>
+						<li>Laravel 4.2.11</li>
+						<li>PHP</li>
+						<li>Javascript</li>
 					</ul>
-					<button class="btn btn-success">Visit</button>
+					<a href="{{ action('HomeController@showBlog') }}"><button class="btn btn-success">Visit</button></a>
 				</div>
 				<div class="pop whacka">
 					<h2>WhackaMole Game</h2>
-					<span>What Is It?</span><p>using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their</p>
+					<span class="inline-title">What Is It?</span><p>Taking the classic game and refiguring it with modern day cartoons. The structure is simple. Click enough heads within the alloted time to get enough points to progress to the next round. Simple as that...or is it?</p>
 
 					<span>Software Used</span>
 					<ul>
-						<li>Established</li>
-						<li>Margaret</li>
-						<li>Moseyee</li>
-						<li>Stuff</li>
+						<li>PHP</li>
+						<li>Javascript</li>
+						<li>mySQL</li>
 					</ul>
-					<button class="btn btn-success">Visit</button>
+					<a href="{{ action('HomeController@whacka') }}"><button class="btn btn-success">Visit</button></a>
 				</div>
 <div class="pop can">
 	<h2>Can You Afford It</h2>
-	<span>What Is It?</span><p>using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their</p>
+	<span class="inline-title">What Is It?</span><p>using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their</p>
 
 	<span>Software Used</span>
 	<ul>

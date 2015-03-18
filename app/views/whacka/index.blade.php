@@ -9,35 +9,35 @@
 	<div id='score'><p> </p></div>
 	<div id="box-container">
 		<div class="box-size">
-			<img id='a' class="box-img" src="/img/boondocks_1.jpg" width="250" height="250">
+			<img id='a' class="box-img" src="/img/boondocks_1.jpg" width="200" height="200">
 		</div>
 
 		<div class="box-size">
-			<img id='b' class="box-img" src="/img/boondocks_2.jpg" width="250" height="250"></div>
+			<img id='b' class="box-img" src="/img/boondocks_2.jpg" width="200" height="200"></div>
 
 		<div class="box-size">
-			<img id='c' class="box-img" src="/img/boondocks_3.jpg" width="250" height="250"></div>
+			<img id='c' class="box-img" src="/img/boondocks_3.jpg" width="200" height="200"></div>
 
 		<div class="box-size">
-			<img id='d' class="box-img" src="/img/boondocks_4.jpg" width="250" height="250"></div>
+			<img id='d' class="box-img" src="/img/boondocks_4.jpg" width="200" height="200"></div>
 
 		<div class="box-size">
-			<img id='e' class="box-img" src="/img/boondocks_5.png" width="250" height="250"></div>
+			<img id='e' class="box-img" src="/img/boondocks_5.png" width="200" height="200"></div>
 
 		<div class="box-size">
-			<img id='f' class="box-img" src="/img/boondocks_6.jpg" width="250" height="250"></div>
+			<img id='f' class="box-img" src="/img/boondocks_6.jpg" width="200" height="200"></div>
 
 		<div class="box-size">
-			<img id='g' class="box-img" src="/img/boondocks_7.png" width="250" height="250"></div>
+			<img id='g' class="box-img" src="/img/boondocks_7.png" width="200" height="200"></div>
 
 		<div class="box-size">
-			<img id='h' class="box-img" src="/img/boondocks_8.jpg" width="250" height="250"></div>
+			<img id='h' class="box-img" src="/img/boondocks_8.jpg" width="200" height="200"></div>
 
 		<div class="box-size">
-			<img id='i' class="box-img" src="/img/boondocks_9.jpg" width="250" height="250"></div>
+			<img id='i' class="box-img" src="/img/boondocks_9.jpg" width="200" height="200"></div>
 		<div style="clear:both"></div>
 	</div>
-	<div class="footer">
+	<div class="footer" id="highscore">
 		<h3> Enter your High Score</h3>
 		<form method="$_POST" action="index.php" class="form">
 			<div class="form-group">
@@ -64,7 +64,6 @@ var game = {
 			if (level == 2 && game.score> 30) {
 				alert("Champion!!!!!!!");
 				clearInterval(timer);
-				$('.footer').fadeIn('slow');
 			}
 			else if(level == 1 && game.score >=20){
 			alert("Congrats! You have progressed to the next Round");
@@ -112,12 +111,13 @@ var game = {
 					$('.box-img').attr('src', randomImage);
 				}
 				$('img').hide();
-				$(randImg).fadeIn().click(function() {
+				$(randImg).fadeIn(function() {
+					$(this).click(function() {
 					 		game.score++;
 					 		$('#score').html(game.score);
 					 		$(this).off();
 					 	});
-				
+				});
 				// $('randImg').
 				// Decrement our timer and update html
 				detinater--;
@@ -129,8 +129,7 @@ var game = {
 					game.didTheyWin(level);
 				}
 			}, tme);
-		}
-		// code where condition to show form and table will appear with regards to the score.
+		}		
 }
 
 var confirmToStart = confirm("Would you like to play?");
@@ -139,4 +138,7 @@ var confirmToStart = confirm("Would you like to play?");
 			game.startGame(1000, 30, 1);
 		};	
 		//code should select the exact box that was clicked and let it fadeIn then out after a delay.
+$('#replay').click(function() {
+	return game.startGame(1000, 30,1);
+});
 @stop

@@ -9,7 +9,7 @@
 			@if(Request::is('index'))
 				<button class="btn btn-link "><a id="#showWork" href="#workTitle">My Work</a></button>
 			@else
-			<button class="btn btn-link "><a id="#showWork" href="{{ action('HomeController@showMyWork') }}">My Work</a></button>
+			<button class="btn btn-link "><a id="#showWork" href="{{ url('/index#workTitle') }}">My Work</a></button>
 			@endif
 		</li>
 		<li>

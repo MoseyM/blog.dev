@@ -1,5 +1,14 @@
 @extends('layouts.master')
-
+@section('additionalStyle')
+	<style type="text/css">
+	body {
+		background: url('/img/master/master_background.jpg') no-repeat center center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+	</style>
 @section('content')
 	<div class="contentdiv">
 		<h1 id="heading"> Resume </h1>
